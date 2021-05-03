@@ -57,9 +57,11 @@ const App = () => {
             <div class="ui divider"></div>
             <div class="ui form">
                 <div class="field">
-                    <label><i class="paper plane outline icon"></i>背誦區：
+                    <label><i class="edit icon"></i>背誦區：
                     </label>
                     <textarea onChange={(e)=>{setRecitation(e.target.value)}}></textarea>
+                    <label><i class="microphone icon"></i>小提醒：可以用手機的語音輸入法來默背哦
+                    </label>
                 </div>
             </div>
             <div class="ui divider"></div>
@@ -74,8 +76,8 @@ const App = () => {
                 <thead>
                     <tr>
                     <th></th>
-                    <th>正確答案</th>
-                    <th>原始作答</th>
+                    <th class="positive">正確答案</th>
+                    <th class="warning">原始作答</th>
                 </tr></thead>
                 <tbody>
                     {lev.pairs().map(function(name, index){
