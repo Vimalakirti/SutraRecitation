@@ -1,49 +1,20 @@
 import React, {useState} from 'react'
-
+import ed from 'edit-distance'
 import {sutra, chapter} from './sutra'
-
-function calculateLevDistance(src, tgt) {
-    var realCost;
-    
-    var srcLength = src.length,
-        tgtLength = tgt.length,
-        tempString, tempLength; // for swapping
-    
-    var resultMatrix = new Array();
-        resultMatrix[0] = new Array(); // Multi dimensional
-    
-    // To limit the space in minimum of source and target,
-    // we make sure that srcLength is greater than tgtLength
-    if (srcLength < tgtLength) {
-        tempString = src; src = tgt; tgt = tempString;
-        tempLength = srcLength; srcLength = tgtLength; tgtLength = tempLength;
-    }
-    
-    for (var c = 0; c < tgtLength+1; c++) {
-        resultMatrix[0][c] = c;
-    }
-    
-    for (var i = 1; i < srcLength+1; i++) {
-        resultMatrix[i] = new Array();
-        resultMatrix[i][0] = i;
-        for (var j = 1; j < tgtLength+1; j++) {
-            realCost = (src.charAt(i-1) == tgt.charAt(j-1))? 0: 1;
-            resultMatrix[i][j] = Math.min(
-                resultMatrix[i-1][j]+1,
-                resultMatrix[i][j-1]+1,
-                resultMatrix[i-1][j-1] + realCost // same logic as our previous example.
-            ); 
-        }
-    }
-    
-    return resultMatrix[srcLength][tgtLength];
-}
 
 const App = () => {
     const regex = /[。，、；：？！「」『』:punct:!?., ]/g
     const [index, setIndex] = useState(1)
     const [recitation, setRecitation] = useState("")
     const [show, setShow] = useState(true)
+    const [showAnswer, setShowAnswer] = useState(false)
+    
+    var insert, remove, update;
+    insert = remove = function(node) { return 1; }
+    update = function(stringA, stringB) { return stringA !== stringB ? 1 : 0; }
+    var lev = ed.levenshtein(sutra[index-1].replace(regex,''), recitation.replace(regex,''), insert, remove, update);
+    console.log('Levenshtein', lev.distance, lev.pairs(), lev.alignment())
+
     return (
         <div class="ui container">
             <br/>
@@ -91,7 +62,46 @@ const App = () => {
                     <textarea onChange={(e)=>{setRecitation(e.target.value)}}></textarea>
                 </div>
             </div>
-            <div>待修改的字數：{calculateLevDistance(sutra[index-1].replace(regex,''), recitation.replace(regex,''))}</div>
+            <div class="ui divider"></div>
+            {showAnswer?
+            <div>
+            <button class="ui black button" onClick={()=>{setShowAnswer(!showAnswer)}}>
+                <i class="eye slash icon"></i>
+                隱藏答案
+            </button>
+                <h3 class="ui header">待修改的字數：{lev.distance}</h3>
+                <table class="ui celled table">
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>正確答案</th>
+                    <th>原始作答</th>
+                </tr></thead>
+                <tbody>
+                    {lev.pairs().map(function(name, index){
+                    return (
+                        <tr>
+                            {name[0]==name[1]?
+                            <i class='icon green check'></i>
+                            :
+                            <i class='icon red times'></i>
+                            }
+                            <td >{name[0]}</td>
+                            <td >{name[1]}</td>
+                        </tr>
+                    );
+                    })}
+                </tbody>
+                </table>
+            </div>
+            
+            :
+            <button class="ui blue button" onClick={()=>{setShowAnswer(!showAnswer)}}>
+                <i class="eye icon"></i>
+                顯示答案
+            </button>
+            }
+            
             <div class="ui divider"></div>
             <h6>歡迎任何建議：chenbingjyue@gmail.com</h6>
         </div>
