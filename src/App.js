@@ -82,12 +82,12 @@ const App = () => {
                     return (
                         <tr>
                             {name[0]==name[1]?
-                            <i class='icon green check'></i>
+                            <i class='icon big green check'></i>
                             :
-                            <i class='icon red times'></i>
+                            <i class='icon big red times'></i>
                             }
-                            <td >{name[0]}</td>
-                            <td >{name[1]}</td>
+                            <td class="positive">{name[0]}</td>
+                            <td class="warning">{name[1]}</td>
                         </tr>
                     );
                     })}
