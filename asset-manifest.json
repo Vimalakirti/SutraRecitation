@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/sutra_recitation/static/js/main.2916b1d3.chunk.js",
-    "main.js.map": "/sutra_recitation/static/js/main.2916b1d3.chunk.js.map",
+    "main.js": "/sutra_recitation/static/js/main.93fd8015.chunk.js",
+    "main.js.map": "/sutra_recitation/static/js/main.93fd8015.chunk.js.map",
     "runtime-main.js": "/sutra_recitation/static/js/runtime-main.e05d2b6e.js",
     "runtime-main.js.map": "/sutra_recitation/static/js/runtime-main.e05d2b6e.js.map",
     "static/js/2.59f0bb92.chunk.js": "/sutra_recitation/static/js/2.59f0bb92.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.e05d2b6e.js",
     "static/js/2.59f0bb92.chunk.js",
-    "static/js/main.2916b1d3.chunk.js"
+    "static/js/main.93fd8015.chunk.js"
   ]
 }
