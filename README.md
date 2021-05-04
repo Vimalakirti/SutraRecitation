@@ -6,15 +6,15 @@
 ## 使用說明(IOS Safari)
 1. 開啟瀏覽器，輸入以上網址，點選右上角的「分享」鍵，再點擊「加入主畫面」。
 ![1](https://github.com/Vimalakirti/sutra_recitation/blob/master/docs/IMG_0765.PNG)
-2. 再按新增
+2. 再按「新增」
 ![2](https://github.com/Vimalakirti/sutra_recitation/blob/master/docs/IMG_0766.PNG)
-3. 回到自己的主畫面，會看到多了一個APP，如下圖
+3. 回到自己的主畫面，會看到多了一個APP，如該圖→
 ![3](https://github.com/Vimalakirti/sutra_recitation/blob/master/docs/IMG_0767.PNG)
 4. 點開該APP，先選想要背誦的經典，此處以金剛經為例：
 ![4](https://github.com/Vimalakirti/sutra_recitation/blob/master/docs/IMG_0768.PNG)
-5. 可以點選Next按鈕看該經典的下一個章節
+5. 可以點選「Next」按鈕看該經典的下一個章節
 ![5](https://github.com/Vimalakirti/sutra_recitation/blob/master/docs/IMG_0769.jpg)
-6. 也可以按Prev按鈕，回到上一章節。此處我們按了好幾次Next，因此到了金剛經第十二分，現在開始看著經文背誦，如果背好了，請按「隱藏經文」按鈕。
+6. 也可以按「Prev」按鈕，回到上一章節。此處我們按了好幾次Next，因此到了金剛經第十二分，現在開始看著經文背誦，如果背好了，請按「隱藏經文」按鈕。
 ![6](https://github.com/Vimalakirti/sutra_recitation/blob/master/docs/IMG_0770.jpg)
 7. 按「隱藏經文」按鈕後，就會如下圖那樣，經文不見了。此時，只要再按一下綠色的「顯示經文」鍵，經文又會再出現。
 ![7](https://github.com/Vimalakirti/sutra_recitation/blob/master/docs/IMG_0771.jpg)
