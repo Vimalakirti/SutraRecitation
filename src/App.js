@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Dropdown } from 'semantic-ui-react'
 import ed from 'edit-distance'
-import {diamond_sutra, heart_sutra, universal_gate_chapter, bodhisattva_samantabhadra} from './sutra'
+import {diamond_sutra, bequeathed_teachings_sutra, heart_sutra, universal_gate_chapter, bodhisattva_samantabhadra} from './sutra'
 
 const sutraOptions = [
     {
@@ -13,6 +13,11 @@ const sutraOptions = [
       key: 'HeartSutra',
       text: '心經',
       value: 'HeartSutra',
+    },
+    {
+        key: 'BequeathedTeachingsSutra',
+        text: '佛遺教經',
+        value: 'BequeathedTeachingsSutra',
     },
     {
       key: 'BodhisattvaSamantabhadra',
@@ -35,25 +40,24 @@ const App = () => {
 
     const [currentSutra, setCurrentSutra] = useState(diamond_sutra)
     const handleDropdown = (e, data) => {
+        setIndex(1)
         switch(data.value){
             case "DiamondSutra":
-                setIndex(1)
                 setCurrentSutra(diamond_sutra)
             break
             case "HeartSutra":
-                setIndex(1)
                 setCurrentSutra(heart_sutra)
             break
+            case "BequeathedTeachingsSutra":
+                setCurrentSutra(bequeathed_teachings_sutra)
+            break
             case "TheUniversalGate":
-                setIndex(1)
                 setCurrentSutra(universal_gate_chapter)
             break
             case "BodhisattvaSamantabhadra":
-                setIndex(1)
                 setCurrentSutra(bodhisattva_samantabhadra)
             break
             default:
-                setIndex(1)
                 setCurrentSutra(diamond_sutra)
             break
         }
